@@ -1,6 +1,9 @@
+import 'package:asseginment/varriable/config.dart';
 import 'package:asseginment/widgets/box_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../service/responsivee.dart';
 import '../varriable/varriable.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/circuler_prograss_widget.dart';
@@ -12,27 +15,33 @@ class HomePages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffFFFFFF),
-      appBar: AppBarWidget(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              ContainerCard(context),
-              SizedBox(
-                height: 40,
+    return GetBuilder<Responsivee>(
+      builder: (pc) {
+        if(pc.size.value<=0.0) pc.initApp(context);
+
+        return Scaffold(
+          backgroundColor: Color(0xffFFFFFF),
+          appBar: AppBarWidget(),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  ContainerCard(context),
+                  SizedBox(
+                    height: dSize(0.10),
+                  ),
+                  TimePeriodWidget(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  GridViewWidget()
+                ],
               ),
-              TimePeriodWidget(),
-              SizedBox(
-                height: 20,
-              ),
-              GridViewWidget()
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      }
     );
   }
 

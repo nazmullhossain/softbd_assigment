@@ -1,3 +1,4 @@
+import 'package:asseginment/varriable/config.dart';
 import 'package:flutter/material.dart';
 
 import '../varriable/varriable.dart';
@@ -8,7 +9,7 @@ class GridViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   Container(
-      height: 272,
+      height: dSize(0.8),
       child: GridView.builder(
           itemCount: Variables.items.length,
           physics: NeverScrollableScrollPhysics(),
