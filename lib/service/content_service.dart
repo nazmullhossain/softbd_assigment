@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:asseginment/varriable/varriable.dart';
+
 import '../models/content_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -9,7 +11,7 @@ class ContentService {
 
     try {
       http.Response res = await http.get(
-        Uri.parse('https://api.npoint.io/bc69ae1f6991da81ab9a'),
+        Uri.parse(Variables.baseUrl),
       );
       print("company data${res.body}");
 
@@ -29,3 +31,4 @@ class ContentService {
     return getContent;
   }
 }
+//

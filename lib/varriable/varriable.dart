@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Variables {
   //static const String baseUrl = 'http://tashfia.binduitsolutions.com/api/';
-  static const String baseUrl = 'https://skill-test.retinasoft.com.bd/api/v1/';
+  static const String baseUrl = 'https://api.npoint.io/bc69ae1f6991da81ab9a';
 
   static List<String> dropdownItems = [
     'অনুচ্ছেদের বিভাগ নির্বাচন করুন',
