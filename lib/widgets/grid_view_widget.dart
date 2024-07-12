@@ -9,11 +9,14 @@ class GridViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   Container(
-      height: dSize(0.8),
+      height: dSize(0.7),
       child: GridView.builder(
           itemCount: Variables.items.length,
           physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 30,
+
+
               crossAxisCount: 3),
           itemBuilder: (context, index) {
             final data = Variables.items[index];

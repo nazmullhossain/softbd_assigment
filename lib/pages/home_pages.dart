@@ -27,13 +27,14 @@ class HomePages extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 children: [
+                  SizedBox(height: dSize(0.03),),
                   ContainerCard(context),
                   SizedBox(
                     height: dSize(0.10),
                   ),
                   TimePeriodWidget(),
                   SizedBox(
-                    height: 20,
+                    height: dSize(0.05),
                   ),
                   GridViewWidget()
                 ],

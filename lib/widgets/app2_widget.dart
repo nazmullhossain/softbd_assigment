@@ -13,6 +13,7 @@ class AppBarWidget2 extends StatelessWidget  implements PreferredSizeWidget{
         padding: const EdgeInsets.only(top: 20),
         child: AppBar(
           backgroundColor: Color(0xffFFFFFF),
+          centerTitle: true,
           leading: Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Image.asset("images/Hamburger Menu.png"),

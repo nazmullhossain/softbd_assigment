@@ -23,7 +23,8 @@ class TimePeriodWidget extends StatelessWidget {
                     width: 90,
                     child: CircularProgressIndicator(
                       strokeWidth: 10,
-                      value: 0.9,
+
+                      value: 0.80,
                       backgroundColor: Color(0xff86B560),
                       color: Color(0xffF5F5F5),
                     ),
