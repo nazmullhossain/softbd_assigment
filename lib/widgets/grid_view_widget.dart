@@ -10,6 +10,7 @@ class GridViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return   Container(
       height: dSize(0.7),
+
       child: GridView.builder(
           itemCount: Variables.items.length,
           physics: NeverScrollableScrollPhysics(),
