@@ -3,7 +3,8 @@ import 'package:asseginment/widgets/box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../service/responsivee.dart';
+
+import '../controller/responsivee.dart';
 import '../varriable/varriable.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/circuler_prograss_widget.dart';

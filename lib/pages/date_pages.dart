@@ -1,4 +1,4 @@
-import 'package:asseginment/service/content_service.dart';
+
 import 'package:asseginment/varriable/config.dart';
 import 'package:asseginment/varriable/varriable.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +7,7 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/intl.dart';
 
+import '../controller/content_service.dart';
 import '../models/content_model.dart';
 import '../widgets/app2_widget.dart';
 import '../widgets/button_widget.dart';
