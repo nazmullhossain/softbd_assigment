@@ -1,4 +1,5 @@
 import 'package:asseginment/service/content_service.dart';
+import 'package:asseginment/varriable/config.dart';
 import 'package:asseginment/varriable/varriable.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -72,7 +73,7 @@ class _DateSelectorState extends State<DateSelector> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 15,
+              height: dSize(0.04),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,11 +92,11 @@ class _DateSelectorState extends State<DateSelector> {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: dSize(0.03),
             ),
             banglaDate(),
             SizedBox(
-              height: 26,
+              height: dSize(0.07),
             ),
             listViewWidget()
 

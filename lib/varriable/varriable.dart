@@ -8,9 +8,10 @@ class Variables {
   static const String baseUrl = 'https://api.npoint.io/bc69ae1f6991da81ab9a';
 
   static List<String> dropdownItems = [
-    'অনুচ্ছেদের বিভাগ নির্বাচন করুন',
-    'Item 2',
-    'Item 3'
+    'তিতাস একটি নদীর নাম',
+    'হাজার বছর ধরে',
+    'পথের পাঁচালী'
+    'চোখের বালি'
   ];
   static List<String> placeItems = ['ঢাকা', 'কুুমিল্লা', 'খুলনা', 'রাজশাহী'];
 

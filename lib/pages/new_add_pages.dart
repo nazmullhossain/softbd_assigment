@@ -14,6 +14,7 @@ class NewAddPages extends StatefulWidget {
 
 class _NewAddPagesState extends State<NewAddPages> {
   String _selectedValue = "";
+  String _placeValue = "";
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +89,7 @@ class _NewAddPagesState extends State<NewAddPages> {
 
     if (selectedValue != null) {
       setState(() {
-        _selectedValue = selectedValue;
+        _placeValue = selectedValue;
       });
     }
   }
@@ -209,6 +210,62 @@ class _NewAddPagesState extends State<NewAddPages> {
           ],
         ),
       ),
+
+
+      Container(
+        width: 327,
+        height: 85,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "তারিখ ও সময়",
+              style: Variables.style(
+                  context, 16, FontWeight.w700, Color(0xff202020)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 35,
+              width: 327,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Color(0xffFFFFFF),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 0,
+                    blurRadius: 0.1,
+                    offset:
+                    Offset(0.1, 0.1), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: TextField(
+                controller: TextEditingController(text: _placeValue),
+                readOnly: true,
+                onTap: () {
+                  // _placeDropdown(context);
+                },
+                decoration: InputDecoration(
+                    prefixIcon: Image.asset("images/cl.png"),
+                    hintText: "নির্বাচন করুন",
+                    hintStyle: Variables.style(context, 14,
+                        FontWeight.w400, Color(0xff6A6A6A)),
+                    enabledBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    contentPadding: EdgeInsets.all(10),
+                    suffixIcon: Image.asset("images/arrow.png")),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
+      ),
       //place
       Container(
         width: 327,
@@ -241,7 +298,7 @@ class _NewAddPagesState extends State<NewAddPages> {
                 ],
               ),
               child: TextField(
-                controller: TextEditingController(text: _selectedValue),
+                controller: TextEditingController(text: _placeValue),
                 readOnly: true,
                 onTap: () {
                   _placeDropdown(context);
