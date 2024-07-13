@@ -15,7 +15,7 @@ class NewAddPages extends StatefulWidget {
 class _NewAddPagesState extends State<NewAddPages> {
   String _selectedValue = "";
   String _placeValue = "";
-
+  final TextEditingController _dateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +94,20 @@ class _NewAddPagesState extends State<NewAddPages> {
     }
   }
 
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
 
+    if (pickedDate != null) {
+      setState(() {
+        _dateController.text = "${pickedDate.toLocal()}".split(' ')[0];
+      });
+    }
+  }
   Widget bodyUI()=>Column(
     children: [
       Container(
@@ -243,10 +256,10 @@ class _NewAddPagesState extends State<NewAddPages> {
                 ],
               ),
               child: TextField(
-                controller: TextEditingController(text: _placeValue),
+                controller: _dateController,
                 readOnly: true,
                 onTap: () {
-                  // _placeDropdown(context);
+                   _selectDate(context);
                 },
                 decoration: InputDecoration(
                     prefixIcon: Image.asset("images/cl.png"),
