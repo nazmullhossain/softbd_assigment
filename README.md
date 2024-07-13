@@ -47,8 +47,7 @@ That's it! You have successfully cloned the Flutter project from the given repos
 <img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/1.jfif?token=GHSAT0AAAAAACRPISOMYNMJM5I4F7KQLDMWZUSIFVQ"/>
 
 # somoy-Rakha page
-<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/2.jfif?token=GHSAT0AAAAAACRPISONMNESWTEHIHDMAT22ZUSH4CQ">
-
+<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/2.jfif?token=GHSAT0AAAAAACRPISONCCZAFZD3I3LBBLZIZUSIGSQ"/>
 
 #New add page
 <img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/3.jfif?token=GHSAT0AAAAAACRPISOMENPBU3G5NTJH4FCAZUSH7EQ"/>
