@@ -45,3 +45,13 @@ That's it! You have successfully cloned the Flutter project from the given repos
 
 # home page
 <img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/1.jfif?token=GHSAT0AAAAAACRPISOMON53SHRIH4AJJIWYZUSHXNA">
+
+# somoy-Rakha page
+<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/2.jfif?token=GHSAT0AAAAAACRPISONMNESWTEHIHDMAT22ZUSH4CQ">
+
+#New add page
+<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/3.jfif?token=GHSAT0AAAAAACRPISOMENPBU3G5NTJH4FCAZUSH7EQ"/>
+
+#complete page
+<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/4.jfif?token=GHSAT0AAAAAACRPISOMS6ESGAYWNZ6GKNP2ZUSIAKQ"/>
+
