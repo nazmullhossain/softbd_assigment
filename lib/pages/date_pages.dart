@@ -21,15 +21,14 @@ class _DateSelectorState extends State<DateSelector> {
   DateTime selectedDate = DateTime.now();
   List<Data> data = [];
   ContentService contentService = ContentService();
-  List<Data> _filteredItems = [];
-  List<Data> fo = [];
+  List<Data> filterData = [];
   final String formattedDate = "";
   @override
   void initState() {
     super.initState();
     generateDates();
     getContentData();
-    fo = data;
+    filterData = data;
   }
 
   List<Data>? result;
@@ -43,7 +42,7 @@ class _DateSelectorState extends State<DateSelector> {
           .toList();
     }
     setState(() {
-      fo = result!;
+      filterData = result!;
     });
   }
 
@@ -94,85 +93,7 @@ class _DateSelectorState extends State<DateSelector> {
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 87,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xffFFFFFF),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 0,
-                    blurRadius: 0.1,
-                    offset: Offset(0.1, 0.1), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: SizedBox(
-                height: 50,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: dates.length,
-                  itemBuilder: (context, index) {
-                    DateTime date = dates[index];
-                    bool isSelected = date.day == selectedDate.day &&
-                        date.month == selectedDate.month &&
-                        date.year == selectedDate.year;
-
-                    return GestureDetector(
-                      onTap: () {
-                        int _timestamp = date.millisecondsSinceEpoch ~/ 1000;
-                        print(_timestamp.toString());
-                        runFilter(_timestamp.toString());
-                        setState(() {
-                          selectedDate = date;
-
-                          // print(selectedDate);
-                        });
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 5),
-                        child: Container(
-                          padding: const EdgeInsets.all(3.0),
-                          margin: EdgeInsets.symmetric(horizontal: 4),
-                          decoration: BoxDecoration(
-                            // color: isSelected ? Colors.blue : Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-
-                            border: GradientBoxBorder(
-                              width: 1.5,
-                              gradient: isSelected
-                                  ? LinearGradient(colors: [
-                                      Color(0xff86B560),
-                                      Color(0xff336F4A)
-                                    ])
-                                  : LinearGradient(colors: [
-                                      Colors.transparent,
-                                      Colors.transparent
-                                    ]),
-                            ),
-                          ),
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(DateFormat.E('bn').format(date),
-                                    style: Variables.style(context, 14,
-                                        FontWeight.w400, Color(0xff6A6A6A))),
-                                Text(DateFormat.d('bn').format(date),
-                                    style: Variables.style(context, 16,
-                                        FontWeight.w600, Color(0xff202020))),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
+            banglaDate(),
             SizedBox(
               height: 26,
             ),
@@ -183,7 +104,7 @@ class _DateSelectorState extends State<DateSelector> {
       ),
     );
   }
-  Widget listViewWidget()=>data.isEmpty?Center(child: CircularProgressIndicator(),) :Container(
+  Widget listViewWidget()=>data.isEmpty?const Center(child: CircularProgressIndicator(),) :Container(
     child: SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -199,10 +120,10 @@ class _DateSelectorState extends State<DateSelector> {
               height: MediaQuery.of(context).size.height*0.5,
               child: ListView.builder(
                   itemCount:
-                  fo.isNotEmpty ? fo.length : data!.length,
+                  filterData.isNotEmpty ? filterData.length : data.length,
                   itemBuilder: (context, index) {
                     final content =
-                    fo.isNotEmpty ? fo[index] : data![index];
+                    filterData.isNotEmpty ? filterData[index] : data[index];
 
                     final DateTime dateTime =
                     DateTime.parse(content.date.toString());
@@ -271,6 +192,85 @@ class _DateSelectorState extends State<DateSelector> {
             )
           ],
         ),
+      ),
+    ),
+  );
+  Widget banglaDate()=>  Container(
+    height: 87,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Color(0xffFFFFFF),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.5),
+          spreadRadius: 0,
+          blurRadius: 0.1,
+          offset: Offset(0.1, 0.1), // changes position of shadow
+        ),
+      ],
+    ),
+    child: SizedBox(
+      height: 50,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: dates.length,
+        itemBuilder: (context, index) {
+          DateTime date = dates[index];
+          bool isSelected = date.day == selectedDate.day &&
+              date.month == selectedDate.month &&
+              date.year == selectedDate.year;
+
+          return GestureDetector(
+            onTap: () {
+              int _timestamp = date.millisecondsSinceEpoch ~/ 1000;
+              print(_timestamp.toString());
+              runFilter(_timestamp.toString());
+              setState(() {
+                selectedDate = date;
+
+                // print(selectedDate);
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 10, horizontal: 5),
+              child: Container(
+                padding: const EdgeInsets.all(3.0),
+                margin: EdgeInsets.symmetric(horizontal: 4),
+                decoration: BoxDecoration(
+                  // color: isSelected ? Colors.blue : Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+
+                  border: GradientBoxBorder(
+                    width: 1.5,
+                    gradient: isSelected
+                        ? LinearGradient(colors: [
+                      Color(0xff86B560),
+                      Color(0xff336F4A)
+                    ])
+                        : LinearGradient(colors: [
+                      Colors.transparent,
+                      Colors.transparent
+                    ]),
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(DateFormat.E('bn').format(date),
+                          style: Variables.style(context, 14,
+                              FontWeight.w400, Color(0xff6A6A6A))),
+                      Text(DateFormat.d('bn').format(date),
+                          style: Variables.style(context, 16,
+                              FontWeight.w600, Color(0xff202020))),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     ),
   );

@@ -13,8 +13,8 @@ class GridViewWidget extends StatelessWidget {
 
       child: GridView.builder(
           itemCount: Variables.items.length,
-          physics: NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisSpacing: 30,
 
 
@@ -34,7 +34,7 @@ class GridViewWidget extends StatelessWidget {
                   Text(
                     data.title,
                     style: Variables.style(context, 16,
-                        FontWeight.w600, Color(0xff202020)),
+                        FontWeight.w600, const Color(0xff202020)),
                   )
                 ],
               ),

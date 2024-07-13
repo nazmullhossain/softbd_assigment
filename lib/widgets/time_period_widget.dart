@@ -49,7 +49,7 @@ class TimePeriodWidget extends StatelessWidget {
               Row(
                 children: [
                   Image.asset("images/Calendar.png"),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(
@@ -59,13 +59,13 @@ class TimePeriodWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "আরও বাকি",
                 style: Variables.style(
-                    context, 16, FontWeight.w700, Color(0xffFF737A)),
+                    context, 16, FontWeight.w700, const Color(0xffFF737A)),
               ),
               Container(
                 height: 46,
