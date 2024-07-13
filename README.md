@@ -44,7 +44,7 @@ That's it! You have successfully cloned the Flutter project from the given repos
 
 
 # home page
-<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/1.jfiftoken=GHSAT0AAAAAACRPISOMON53SHRIH4AJJIWYZUSHXNA">
+<img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/1.jfif?token=GHSAT0AAAAAACRPISOMYNMJM5I4F7KQLDMWZUSIFVQ"/>
 
 # somoy-Rakha page
 <img src="https://raw.githubusercontent.com/nazmullhossain/softbd_assigment/main/images/2.jfif?token=GHSAT0AAAAAACRPISONMNESWTEHIHDMAT22ZUSH4CQ">
